@@ -1,0 +1,883 @@
+/* Markdown Visualizer Plugin Styles */
+
+/* 主容器样式 */
+.visualizer-container {
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 6px;
+    background-color: var(--background-primary);
+    overflow: auto;
+}
+
+/* 错误提示样式 */
+.visualizer-error {
+    color: var(--text-error);
+    background-color: var(--background-modifier-error);
+    padding: 1em;
+    border-radius: 4px;
+    border-left: 4px solid var(--text-error);
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+}
+
+.visualizer-error strong {
+    font-weight: 600;
+}
+
+/* 占位符样式（开发中提示）*/
+.visualizer-placeholder {
+    padding: 1.5em;
+    text-align: center;
+    color: var(--text-muted);
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    border: 2px dashed var(--background-modifier-border);
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+/* 临时源码显示 */
+.visualizer-source {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    font-family: var(--font-monospace);
+    font-size: 0.85em;
+    max-height: 300px;
+}
+
+.visualizer-source code {
+    color: var(--text-normal);
+}
+
+/* ========== Canvas 样式 ========== */
+.canvas-renderer {
+    border: 1px solid var(--background-modifier-border);
+}
+
+.canvas-viewer-container {
+    min-height: 200px;
+}
+
+.canvas-viewer-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Canvas SVG 元素样式 */
+.canvas-viewer-container svg text {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ========== Graphviz 样式 ========== */
+.graphviz-renderer {
+    border: 1px solid var(--background-modifier-border);
+}
+
+.graphviz-container {
+    min-height: 200px;
+}
+
+.graphviz-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== Infographic 样式 ========== */
+.infographic-renderer {
+    border: 1px solid var(--background-modifier-border);
+}
+
+.infographic-container {
+    min-height: 100px;
+    --infographic-accent-color: var(--interactive-accent);
+}
+
+/* 标题和描述 */
+.infographic-header {
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.infographic-title {
+    margin: 0 0 0.5em 0;
+    color: var(--text-normal);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.infographic-desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95em;
+}
+
+/* 页脚 */
+.infographic-footer {
+    margin-top: 1.5em;
+    padding-top: 1em;
+    border-top: 1px solid var(--background-modifier-border);
+    text-align: center;
+}
+
+.infographic-meta {
+    color: var(--text-faint);
+    font-size: 0.85em;
+}
+
+/* 网格布局 */
+.infographic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.infographic-card {
+    background: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.infographic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.infographic-icon {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.infographic-card-label {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    color: var(--text-normal);
+}
+
+.infographic-card-value {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--infographic-accent-color);
+    margin: 0.5em 0;
+}
+
+.infographic-card-desc {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 0.5em;
+}
+
+/* 横向列表 */
+.infographic-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.infographic-row-item {
+    flex: 1;
+    min-width: 150px;
+    background: var(--background-secondary);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+}
+
+.infographic-row-label {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-normal);
+    margin-bottom: 0.5em;
+}
+
+.infographic-row-desc {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.infographic-arrow {
+    font-size: 1.5em;
+    color: var(--infographic-accent-color);
+    flex-shrink: 0;
+}
+
+/* 纵向列表 */
+.infographic-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.infographic-column-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+    background: var(--background-secondary);
+    border-radius: 8px;
+    border-left: 3px solid var(--infographic-accent-color);
+}
+
+.infographic-column-item.done {
+    border-left-color: var(--text-success);
+}
+
+.infographic-bullet {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--infographic-accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.infographic-column-item.done .infographic-bullet {
+    background: var(--text-success);
+}
+
+.infographic-column-content {
+    flex: 1;
+}
+
+.infographic-column-label {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: var(--text-normal);
+    margin-bottom: 0.25em;
+}
+
+.infographic-column-desc {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+/* 时间线 */
+.infographic-timeline {
+    position: relative;
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.infographic-timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--background-modifier-border);
+}
+
+.infographic-timeline-item {
+    position: relative;
+    margin-bottom: 2em;
+    padding-left: 1.5em;
+}
+
+.infographic-timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--infographic-accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8em;
+    z-index: 1;
+}
+
+.infographic-timeline-label {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-normal);
+    margin-bottom: 0.5em;
+}
+
+.infographic-timeline-desc {
+    font-size: 0.95em;
+    color: var(--text-muted);
+}
+
+/* 步骤 */
+.infographic-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
+.infographic-step {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+}
+
+.infographic-step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--infographic-accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.infographic-step-content {
+    flex: 1;
+    padding-top: 0.5em;
+}
+
+.infographic-step-label {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-normal);
+    margin-bottom: 0.5em;
+}
+
+.infographic-step-desc {
+    font-size: 0.95em;
+    color: var(--text-muted);
+}
+
+/* 对比 */
+.infographic-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin: 1em 0;
+}
+
+.infographic-compare-side {
+    background: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 1.5em;
+}
+
+.infographic-compare-label {
+    margin: 0 0 1em 0;
+    color: var(--text-normal);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 0.75em;
+    border-bottom: 2px solid var(--infographic-accent-color);
+}
+
+.infographic-compare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infographic-compare-list li {
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.infographic-compare-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--infographic-accent-color);
+    font-weight: 600;
+}
+
+/* 默认列表 */
+.infographic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    margin: 1em 0;
+}
+
+.infographic-list-item {
+    padding: 1em;
+    background: var(--background-secondary);
+    border-radius: 6px;
+    border-left: 3px solid var(--infographic-accent-color);
+}
+
+.infographic-value {
+    color: var(--infographic-accent-color);
+    font-weight: 600;
+}
+
+/* ========== 漏斗图 ========== */
+.infographic-funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    margin: 2em 0;
+    padding: 1em;
+}
+
+.infographic-funnel-item {
+    background: var(--infographic-accent-color);
+    color: white;
+    padding: 1.5em 2em;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.2s;
+    min-width: 200px;
+}
+
+.infographic-funnel-item:hover {
+    transform: scale(1.02);
+}
+
+.infographic-funnel-content {
+    position: relative;
+    z-index: 1;
+}
+
+.infographic-funnel-label {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+.infographic-funnel-value {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.infographic-funnel-desc {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-top: 0.5em;
+}
+
+/* ========== 进度指标 ========== */
+.infographic-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
+.infographic-progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.infographic-progress-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infographic-progress-label {
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--text-normal);
+}
+
+.infographic-progress-percentage {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--infographic-accent-color);
+}
+
+.infographic-progress-bar-container {
+    width: 100%;
+    height: 24px;
+    background: var(--background-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.infographic-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--infographic-accent-color), var(--infographic-accent-color));
+    border-radius: 12px;
+    transition: width 0.6s ease;
+    position: relative;
+}
+
+.infographic-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.infographic-progress-desc {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 0.25em;
+}
+
+/* ========== 路线图 ========== */
+.infographic-roadmap {
+    position: relative;
+    margin: 2em 0;
+    padding-left: 3em;
+}
+
+.infographic-roadmap::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom,
+        var(--infographic-accent-color) 0%,
+        var(--infographic-accent-color) 50%,
+        var(--background-modifier-border) 50%,
+        var(--background-modifier-border) 100%);
+}
+
+.infographic-roadmap-item {
+    position: relative;
+    margin-bottom: 2.5em;
+    padding-left: 1.5em;
+}
+
+.infographic-roadmap-marker {
+    position: absolute;
+    left: -2.65em;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--background-primary);
+    border: 3px solid var(--background-modifier-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: var(--text-muted);
+    z-index: 1;
+}
+
+.infographic-roadmap-marker.completed {
+    background: var(--infographic-accent-color);
+    border-color: var(--infographic-accent-color);
+    color: white;
+    font-weight: 700;
+}
+
+.infographic-roadmap-marker.current {
+    background: var(--infographic-accent-color);
+    border-color: var(--infographic-accent-color);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.infographic-roadmap-content {
+    background: var(--background-secondary);
+    border-radius: 8px;
+    padding: 1.5em;
+    border: 1px solid var(--background-modifier-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.infographic-roadmap-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.infographic-roadmap-label {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--text-normal);
+    margin-bottom: 0.5em;
+}
+
+.infographic-roadmap-desc {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin-bottom: 0.75em;
+}
+
+.infographic-roadmap-date {
+    font-size: 0.85em;
+    color: var(--infographic-accent-color);
+    font-weight: 600;
+    margin-top: 0.5em;
+}
+
+.infographic-roadmap-children {
+    margin-top: 1em;
+    padding-left: 1.5em;
+    list-style: none;
+}
+
+.infographic-roadmap-children li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.infographic-roadmap-children li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--infographic-accent-color);
+}
+
+/* ========== 价格表 ========== */
+.infographic-pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.infographic-pricing-plan {
+    position: relative;
+    background: var(--background-secondary);
+    border: 2px solid var(--background-modifier-border);
+    border-radius: 12px;
+    padding: 2em;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.infographic-pricing-plan:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.infographic-pricing-plan.recommended {
+    border-color: var(--infographic-accent-color);
+    border-width: 3px;
+    transform: scale(1.05);
+}
+
+.infographic-pricing-plan.recommended:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.infographic-pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--infographic-accent-color);
+    color: white;
+    padding: 0.4em 1.2em;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.infographic-pricing-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-normal);
+    margin-bottom: 1em;
+}
+
+.infographic-pricing-price-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: 1.5em 0;
+}
+
+.infographic-pricing-currency {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 0.2em;
+}
+
+.infographic-pricing-price {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--infographic-accent-color);
+    line-height: 1;
+}
+
+.infographic-pricing-period {
+    font-size: 1em;
+    color: var(--text-muted);
+    margin-left: 0.3em;
+}
+
+.infographic-pricing-desc {
+    font-size: 0.95em;
+    color: var(--text-muted);
+    margin: 1em 0 1.5em 0;
+    min-height: 2.5em;
+}
+
+.infographic-pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+    text-align: left;
+}
+
+.infographic-pricing-features li {
+    padding: 0.75em 0;
+    border-bottom: 1px solid var(--background-modifier-border);
+    position: relative;
+    padding-left: 1.8em;
+}
+
+.infographic-pricing-features li:last-child {
+    border-bottom: none;
+}
+
+.infographic-pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--infographic-accent-color);
+    font-weight: 700;
+}
+
+.infographic-pricing-button {
+    margin-top: 1.5em;
+    padding: 0.9em 2em;
+    background: var(--infographic-accent-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.infographic-pricing-button:hover {
+    background: var(--infographic-accent-color);
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.infographic-pricing-plan.recommended .infographic-pricing-button {
+    background: var(--infographic-accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Vega 样式 ========== */
+.vega-renderer {
+    border: 1px solid var(--background-modifier-border);
+}
+
+.vega-container {
+    min-height: 200px;
+}
+
+.vega-container .vega-embed {
+    width: 100%;
+}
+
+.vega-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+    .visualizer-container {
+        padding: 0.5em;
+    }
+
+    .visualizer-error {
+        font-size: 0.85em;
+    }
+}
+
+/* ========== 深色模式适配 ========== */
+.theme-dark .visualizer-container {
+    background-color: var(--background-primary-alt);
+}
+
+.theme-dark .graphviz-container svg,
+.theme-dark .canvas-viewer-container svg {
+    filter: brightness(0.9);
+}
+
+/* Canvas 节点在深色模式下的调整 */
+.theme-dark .canvas-viewer-container svg rect {
+    stroke-opacity: 0.8;
+}
+
+.theme-dark .canvas-viewer-container svg text {
+    fill: var(--text-normal);
+}
+
+/* Vega 图表在深色模式下的调整 */
+.theme-dark .vega-container .vega-embed {
+    background-color: transparent;
+}
+
+/* ========== 打印样式 ========== */
+@media print {
+    .visualizer-container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .visualizer-error {
+        border-left-width: 2px;
+    }
+}
+
+/* ========== 可访问性 ========== */
+.visualizer-container:focus-within {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .visualizer-container {
+        border: 2px solid var(--text-normal);
+    }
+
+    .visualizer-error {
+        border-left-width: 6px;
+    }
+}

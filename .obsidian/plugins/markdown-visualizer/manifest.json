@@ -1,0 +1,10 @@
+{
+  "id": "markdown-visualizer",
+  "name": "Markdown Visualizer",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Render Canvas, Graphviz, Infographic, and Vega diagrams in markdown code blocks",
+  "author": "Your Name",
+  "authorUrl": "https://yourwebsite.com",
+  "isDesktopOnly": false
+}

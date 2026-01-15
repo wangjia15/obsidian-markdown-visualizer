@@ -1,0 +1,12 @@
+{
+  "enableCanvas": true,
+  "enableGraphviz": true,
+  "enableInfographic": true,
+  "enableVega": true,
+  "canvasDefaultWidth": 800,
+  "canvasDefaultHeight": 600,
+  "graphvizEngine": "neato",
+  "infographicAccentColor": "red",
+  "vegaActions": true,
+  "theme": "auto"
+}

@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build files
+dist/
+build/
+*.log
+
+# Obsidian workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Windows
+$RECYCLE.BIN/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Test files
+.test/
+coverage/
